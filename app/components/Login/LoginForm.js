@@ -44,7 +44,7 @@ export default class LoginForm extends Component {
         </View>
         <TextInput
           placeholder="Username or Email"
-          placeholderTextColor="#fff"
+          placeholderTextColor="#000"
           style={styles.input}
           onSubmitEditing={() => this.passwordInput.focus()}
           keyboardType="email-address"
@@ -55,7 +55,7 @@ export default class LoginForm extends Component {
         <TextInput
           placeholder="Password"
           secureTextEntry
-          placeholderTextColor="#fff"
+          placeholderTextColor="#000"
           style={styles.input}
           returnKeyType="done"
           ref={input => (this.passwordInput = input)}
@@ -77,7 +77,7 @@ export default class LoginForm extends Component {
           }}
         >
           <TouchableOpacity style={styles.signUpButton}>
-            <Text style={styles.buttonText}>Sign Up</Text>
+            <Text style={styles.signUpText}>Sign Up</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -93,20 +93,20 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     // backgroundColor: 'rgba(rgba(47, 53, 66, .6))',
-    backgroundColor: 'rgba(rgba(0, 0, 0, .2))',
+    backgroundColor: 'rgba(rgba(255, 255, 255, .6))',
     marginBottom: 15,
     color: '#fff',
     paddingHorizontal: 10,
-    borderBottomColor: '#2f3542',
-    borderBottomWidth: 0.6,
+    // borderBottomColor: '#ffffff',
+    // borderBottomWidth: 0.6,
   },
   buttonContainer: {
-    backgroundColor: '#F79F1F',
+    backgroundColor: '#0070cc',
     paddingVertical: 15,
   },
   signUpButton: {
-    backgroundColor: '#000',
-    borderColor: '#F79F1F',
+    backgroundColor: '#fff',
+    borderColor: 'rgb(24,138,214)',
     paddingVertical: 8,
     borderWidth: 1,
     width: 100,
@@ -136,17 +136,17 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   spacerText: {
-    color: '#fff',
+    color: '#0070cc',
     textAlign: 'center',
   },
   smallText: {
     fontSize: 12,
-    color: '#fff',
+    color: '#0070cc',
     textAlign: 'center',
   },
   largeText: {
     fontSize: 15,
-    color: '#fff',
+    color: '#0070cc',
     textAlign: 'center',
   },
   innerContainer: {
@@ -156,4 +156,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     paddingVertical: 5,
   },
+  signUpText: {
+    color: 'rgb(24,138,214)',
+    textAlign: 'center',
+    fontWeight: '700',
+  }
 });

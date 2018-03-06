@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, View, Text, KeyboardAvoidingView, Image } from 'react-native';
 import LoginForm from './LoginForm';
 import { FontAwesome, MaterialCommunityIcons } from '@expo/vector-icons';
+
 
 export default class Login extends Component {
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
         <View style={styles.textContainer}>
+          <Image style={styles.logo} source={require('../../assets/img/logo/logo.png')} />
+          {/*
           <View style={styles.innerContainer}>
             <MaterialCommunityIcons name="github-face"
               size={20}
@@ -16,6 +19,8 @@ export default class Login extends Component {
             <Text style={styles.logoText}>Logo</Text>
           </View>
           <Text style={styles.subHeading}>_______________</Text>
+        */}
+
         </View>
         <View style={styles.formContainer}>
           <LoginForm />
@@ -28,7 +33,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     // backgroundColor: '#212728',
-    backgroundColor: 'rgba(0,0,0,0.85)',
+    backgroundColor: 'rgba(213, 232, 246,0.85)',
   },
   logoContainer: {
     alignItems: 'center',
@@ -65,5 +70,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
     flexDirection: 'row',
+  },
+  logo: {
+    //resizeMode: 'contain',
+    width: 220,
+    height: 70,
   }
 });
