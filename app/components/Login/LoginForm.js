@@ -17,6 +17,7 @@ export default class LoginForm extends Component {
     return (
       <View style={styles.container}>
         <StatusBar
+          //hidden
           barStyle={
             Platform.OS === 'android' ? 'light-content' : 'dark-content'
           }

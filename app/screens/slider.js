@@ -5,6 +5,7 @@ import {
   Text,
   View,
   ImageBackground,
+  Image,
 } from 'react-native';
 
 import { LinearGradient } from 'expo';
@@ -85,37 +86,66 @@ const slider = () => (
   >
     <BackgroundImage>
       <LinearGradient
-        colors={['rgba(58, 106, 252, .9)', 'rgba(213, 232, 246,0.9)']}
-        style={{
-          flex: 1,
+        colors={[
+          'rgba(58, 106, 252, .5)',
+          //'rgba(0, 101, 255, 0.5)',
+          //'rgba(0, 53, 135, .5)',
 
-          // position: 'absolute',
-          // left: 0,
-          // right: 0,
-          // top: 0,
-          // height: 300,
-        }}
-      >
-        <Text>Hello</Text>
-      </LinearGradient>
-    </BackgroundImage>
-    <BackgroundImage>
-      <LinearGradient
-        colors={['rgba(58, 106, 252, .9)', 'rgba(213, 232, 246,0.9)']}
+          'rgba(255, 255, 255,.95)',
+
+          //'rgba(213, 232, 246,0.9)',
+        ]}
         style={styles.container1}
       >
+        <View style={{ paddingTop: 200, paddingBottom: 200 }}>
+          <Text style={styles.text}>Welcome!</Text>
 
-        <Text style={styles.text}>Welcome!</Text>
-        <View style={styles.bottomTextContainer}>
-          <Text style={styles.swipeText}>Swipe to continue</Text>
+          <View style={styles.bottomTextContainer}>
+            <Text style={styles.swipeText}>Swipe to continue</Text>
+          </View>
+        </View>
+        <View style={{}}>
+          <Image
+            style={styles.logo}
+            source={require('../assets/img/logo/logo.png')}
+          />
         </View>
       </LinearGradient>
     </BackgroundImage>
+    {/*
+    <BackgroundImage>
+      <LinearGradient
+        colors={[
+          'rgba(213, 232, 246,0.5)',
+          'rgba(58, 106, 252, .9)',
+          'rgba(58, 106, 252, .5)',
+
+          //'rgba(213, 232, 246,0.9)',
+        ]}
+        style={styles.container1}
+      >
+        <View style={{}}>
+          <Image
+            style={styles.logo}
+            source={require('../assets/img/logo/logo.png')}
+          />
+        </View>
+        <View style={{ paddingTop: 200, paddingBottom: 300 }}>
+          <Text style={styles.text}>Welcome!</Text>
+
+          <View style={styles.bottomTextContainer}>
+            <Text style={styles.swipeText}>Swipe to continue</Text>
+          </View>
+        </View>
+      </LinearGradient>
+    </BackgroundImage>
+
     <BackgroundImage>
       <View style={styles.container2}>
         <Text style={styles.text}>Keep on sliding!</Text>
       </View>
     </BackgroundImage>
+*/}
 
     {/*<Home />*/}
     <BackgroundImage>
@@ -140,6 +170,7 @@ const styles = StyleSheet.create({
     // backgroundColor: '#000',
     // opacity: 0.5,
     //backgroundColor: 'rgba(213, 232, 246,0.85)',
+    //paddingBottom: 200,
   },
   container2: {
     //textAlign: 'center',
@@ -154,7 +185,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: 'center',
     color: 'white',
-    backgroundColor: 'rgba(0,0,0,0)',
+    backgroundColor: 'rgba(0,0,0,.0)',
     fontSize: 32,
     alignItems: 'center',
     justifyContent: 'center',
@@ -183,6 +214,13 @@ const styles = StyleSheet.create({
   },
   bottomTextContainer: {
     alignItems: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logo: {
+    resizeMode: 'contain',
+    width: 200,
+    height: 50,
   },
 });
 
