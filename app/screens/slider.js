@@ -104,6 +104,7 @@ const slider = () => (
         colors={['rgba(58, 106, 252, .9)', 'rgba(213, 232, 246,0.9)']}
         style={styles.container1}
       >
+
         <Text style={styles.text}>Welcome!</Text>
         <View style={styles.bottomTextContainer}>
           <Text style={styles.swipeText}>Swipe to continue</Text>
