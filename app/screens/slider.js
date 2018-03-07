@@ -7,6 +7,8 @@ import {
   ImageBackground,
 } from 'react-native';
 
+import { LinearGradient } from 'expo';
+
 import Swiper from 'react-native-swiper';
 import Home from './Home';
 import Login from '../components/Login/Login';
@@ -82,12 +84,31 @@ const slider = () => (
     }
   >
     <BackgroundImage>
-      <View style={styles.container1}>
+      <LinearGradient
+        colors={['rgba(58, 106, 252, .9)', 'rgba(213, 232, 246,0.9)']}
+        style={{
+          flex: 1,
+
+          // position: 'absolute',
+          // left: 0,
+          // right: 0,
+          // top: 0,
+          // height: 300,
+        }}
+      >
+        <Text>Hello</Text>
+      </LinearGradient>
+    </BackgroundImage>
+    <BackgroundImage>
+      <LinearGradient
+        colors={['rgba(58, 106, 252, .9)', 'rgba(213, 232, 246,0.9)']}
+        style={styles.container1}
+      >
         <Text style={styles.text}>Welcome!</Text>
         <View style={styles.bottomTextContainer}>
           <Text style={styles.swipeText}>Swipe to continue</Text>
         </View>
-      </View>
+      </LinearGradient>
     </BackgroundImage>
     <BackgroundImage>
       <View style={styles.container2}>
@@ -117,7 +138,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // backgroundColor: '#000',
     // opacity: 0.5,
-    backgroundColor: 'rgba(0,0,0,0.65)',
+    //backgroundColor: 'rgba(213, 232, 246,0.85)',
   },
   container2: {
     //textAlign: 'center',

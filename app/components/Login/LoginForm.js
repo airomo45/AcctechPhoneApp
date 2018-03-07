@@ -7,6 +7,7 @@ import {
   Text,
   KeyboardAvoidingView,
   StatusBar,
+  Platform,
 } from 'react-native';
 
 import { FontAwesome } from '@expo/vector-icons';
@@ -15,7 +16,11 @@ export default class LoginForm extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar
+          barStyle={
+            Platform.OS === 'android' ? 'light-content' : 'dark-content'
+          }
+        />
         <TouchableOpacity style={styles.facebookButton}>
           <View style={styles.innerContainer}>
             <FontAwesome
@@ -44,21 +49,23 @@ export default class LoginForm extends Component {
         </View>
         <TextInput
           placeholder="Username or Email"
-          placeholderTextColor="#000"
+          placeholderTextColor="rgba(rgba(0,0,0,0.7))"
           style={styles.input}
           onSubmitEditing={() => this.passwordInput.focus()}
           keyboardType="email-address"
           returnKeyType="next"
           autoCapitalize="none"
           autoCorrect={false}
+          underlineColorAndroid="transparent"
         />
         <TextInput
           placeholder="Password"
           secureTextEntry
-          placeholderTextColor="#000"
+          placeholderTextColor="rgba(rgba(0,0,0,0.7))"
           style={styles.input}
           returnKeyType="done"
           ref={input => (this.passwordInput = input)}
+          underlineColorAndroid="transparent"
         />
 
         <TouchableOpacity style={styles.buttonContainer}>
@@ -93,9 +100,9 @@ const styles = StyleSheet.create({
   input: {
     height: 40,
     // backgroundColor: 'rgba(rgba(47, 53, 66, .6))',
-    backgroundColor: 'rgba(rgba(255, 255, 255, .6))',
+    backgroundColor: 'rgba(rgba(255, 255, 255, .5))',
     marginBottom: 15,
-    color: '#fff',
+    color: '#000',
     paddingHorizontal: 10,
     // borderBottomColor: '#ffffff',
     // borderBottomWidth: 0.6,
@@ -138,6 +145,7 @@ const styles = StyleSheet.create({
   spacerText: {
     color: '#0070cc',
     textAlign: 'center',
+    //fontWeight: 'bold',
   },
   smallText: {
     fontSize: 12,
@@ -160,5 +168,5 @@ const styles = StyleSheet.create({
     color: 'rgb(24,138,214)',
     textAlign: 'center',
     fontWeight: '700',
-  }
+  },
 });
